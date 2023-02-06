@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-spring-petclinic
+  name: app-tekton-argocd
   namespace: openshift-gitops
 spec:
   destination:
