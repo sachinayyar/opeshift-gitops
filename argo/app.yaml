@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-tekton-argocd
+  name: app-tekton-argo
   namespace: openshift-gitops
 spec:
   destination:
