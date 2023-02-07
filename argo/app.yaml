@@ -6,7 +6,7 @@ metadata:
 spec:
   destination:
     namespace: tekton-argocd
-    server: https://api.cluster-dx2vl.dx2vl.sandbox2618.opentlc.com:6443
+    server: https://kubernetes.default.svc
   project: default
   source:
     directory:
