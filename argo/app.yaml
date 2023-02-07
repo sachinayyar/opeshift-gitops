@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app-tekton-spring-boot
-  namespace: tekton-argocd
+  namespace: openshift-gitops
 spec:
   destination:
     namespace: tekton-argocd
