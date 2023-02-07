@@ -7,9 +7,9 @@ spec:
   destination:
     name: ''
     namespace: tekton-argocd
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
   source:
     path: app
-    repoURL: 'https://github.com/sachinayyar/opeshift-gitops.git'
+    repoURL: https://github.com/sachinayyar/opeshift-gitops.git
     targetRevision: main
   project: default
