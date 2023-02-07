@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-tekton-argocd
-  namespace: openshift-gitops
+  name: app-tekton-spring-boot
+  namespace: tekton-argocd
 spec:
   destination:
     namespace: tekton-argocd
-    server: https://kubernetes.default.svc
+    server: https://api.cluster-dx2vl.dx2vl.sandbox2618.opentlc.com:6443
   project: default
   source:
     directory:
