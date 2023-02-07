@@ -3,25 +3,25 @@ kind: Deployment
 metadata:
   annotations:
   labels:
-    app: sample-spring-boot
+    app: tekton-spring-boot
     app.kubernetes.io/component: web
-    app.kubernetes.io/instance: sample-spring-boot
-    app.kubernetes.io/name: sample-spring-boot
-    app.kubernetes.io/part-of: sample-spring-boot
+    app.kubernetes.io/instance: tekton-spring-boot
+    app.kubernetes.io/name: tekton-spring-boot
+    app.kubernetes.io/part-of: tekton-spring-boot
     app.openshift.io/runtime: java
-  name: sample-spring-boot
+  name: tekton-spring-boot
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sample-spring-boot
+      app: tekton-spring-boot
   template:
     metadata:
       labels:
-        app: sample-spring-boot
+        app: tekton-spring-boot
     spec:
       containers:
-      - name: sample-spring-boot
+      - name: tekton-spring-boot
         imagePullPolicy: Always
         image: quay.io/sachinayyar/tekton-argocd:1
         livenessProbe:
