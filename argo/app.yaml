@@ -1,22 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-tekton-spring-boot
-  namespace: openshift-gitops
+  name: tekton-spring-boot
 spec:
   destination:
+    name: ''
     namespace: tekton-argocd
-    server: https://kubernetes.default.svc
-  project: default
+    server: 'https://kubernetes.default.svc'
   source:
-    directory:
-      recurse: true
     path: app
-    repoURL: https://github.com/sachinayyar/opeshift-gitops.git
+    repoURL: 'https://github.com/sachinayyar/opeshift-gitops.git'
     targetRevision: main
-  syncPolicy:
-    syncOptions:
-    - CreateNamespace=false
-    automated:
-      prune: true
-      selfHeal: true
+  project: default
