@@ -23,7 +23,7 @@ spec:
       containers:
       - name: tekton-spring-boot
         imagePullPolicy: Always
-        image: quay.io/sachinayyar/tekton-argocd:1
+        image: quay.io/sachinayyar/tekton-argocd:$(uid)
         livenessProbe:
           failureThreshold: 3
           httpGet:
