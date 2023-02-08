@@ -1,18 +1,25 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: tekton-spring-boot
-  namespace: openshift-gitops
   annotations:
     argocd-image-updater.argoproj.io/image-alias.force-update: 'true'
     argocd-image-updater.argoproj.io/image-alias.update-strategy: 1
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  name: tekton-spring-boot
+  namespace: openshift-gitops
 spec:
   destination:
-    name: ''
     namespace: tekton-argocd
     server: https://kubernetes.default.svc
+  project: default
   source:
+    directory:
+      recurse: true
     path: app
     repoURL: https://github.com/sachinayyar/opeshift-gitops.git
     targetRevision: main
-  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
