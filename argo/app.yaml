@@ -2,7 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd-image-updater.argoproj.io/image-list: quay.io/sachinayyar/tekton-argocd:^0.1
+    argocd-image-updater.argoproj.io/image-list: quay.io/sachinayyar/tekton-argocd
+    argocd-image-updater.argoproj.io/dex.image-name: tekton-argocd
+    argocd-image-updater.argoproj.io/dex.image-tag: ~1
   name: tekton-spring-boot
   namespace: openshift-gitops
 spec:
