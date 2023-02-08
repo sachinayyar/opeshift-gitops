@@ -18,7 +18,7 @@ spec:
     helm:
       releaseName: tekton-argocd
       valueFiles:
-        - chart/values.yaml
+        - values.yaml
     path: app
     repoURL: https://github.com/sachinayyar/opeshift-gitops.git
     targetRevision: main
