@@ -4,7 +4,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: quay.io/sachinayyar/tekton-argocd
     argocd-image-updater.argoproj.io/dex.image-name: tekton-argocd
-    argocd-image-updater.argoproj.io/dex.image-tag: ~1
+    argocd-image-updater.argoproj.io/dex.image-tag: 1
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   name: tekton-spring-boot
