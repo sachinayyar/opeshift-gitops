@@ -15,8 +15,10 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    directory:
-      recurse: true
+    helm:
+      releaseName: tekton-argocd
+      valueFiles:
+        - chart/values.yaml
     path: app
     repoURL: https://github.com/sachinayyar/opeshift-gitops.git
     targetRevision: main
