@@ -23,7 +23,7 @@ spec:
       containers:
       - name: tekton-spring-boot
         imagePullPolicy: Always
-        image: quay.io/sachinayyar/tekton-argo: 0.0.2
+        image: quay.io/sachinayyar/tekton-argo: 0.0.2-SNAPSHOT
         livenessProbe:
           failureThreshold: 1
           httpGet:
