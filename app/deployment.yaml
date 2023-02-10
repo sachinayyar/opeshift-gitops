@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   annotations:
   labels:
-    app: tekton-spring-boot
+    app: app-tekton-argo
     app.kubernetes.io/component: web
     app.kubernetes.io/instance: tekton-spring-boot
     app.kubernetes.io/name: tekton-spring-boot
@@ -23,7 +23,7 @@ spec:
       containers:
       - name: tekton-spring-boot
         imagePullPolicy: Always
-        image: quay.io/sachinayyar/tekton-argocd:1
+        image: quay.io/sachinayyar/tekton-argo
         livenessProbe:
           failureThreshold: 1
           httpGet:
