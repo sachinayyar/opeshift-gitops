@@ -3,13 +3,13 @@ kind: Deployment
 metadata:
   annotations:
   labels:
-    app: app-tekton-argo
+    app: app-tekton-spring-boot
     app.kubernetes.io/component: web
-    app.kubernetes.io/instance: vote-ui
-    app.kubernetes.io/name: vote-ui
-    app.kubernetes.io/part-of: vote-ui
+    app.kubernetes.io/instance: tekton-spring-boot
+    app.kubernetes.io/name: tekton-spring-boot
+    app.kubernetes.io/part-of: tekton-spring-boot
     app.openshift.io/runtime: java
-  name: vote-ui
+  name: tekton-spring-boot
 spec:
   replicas: 1
   selector:
@@ -18,12 +18,12 @@ spec:
   template:
     metadata:
       labels:
-        app: vote-ui
+        app: tekton-spring-boot
     spec:
       containers:
-      - name: vote-ui
+      - name: tekton-spring-boot
         imagePullPolicy: Always
-        image: quay.io/sachinayyar/vote-app:latest
+        image: quay.io/sachinayyar/tekton-argo:latest
         livenessProbe:
           failureThreshold: 1
           httpGet:
