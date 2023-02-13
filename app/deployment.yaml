@@ -14,7 +14,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vote-ui
+      app: tekton-spring-boot
   template:
     metadata:
       labels:
