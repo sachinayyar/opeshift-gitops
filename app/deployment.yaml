@@ -5,11 +5,11 @@ metadata:
   labels:
     app: app-tekton-spring-boot
     app.kubernetes.io/component: web
-    app.kubernetes.io/instance: tekton-spring-boot
+    app.kubernetes.io/instance: app-tekton-spring-boot
     app.kubernetes.io/name: tekton-spring-boot
     app.kubernetes.io/part-of: tekton-spring-boot
     app.openshift.io/runtime: java
-  name: tekton-spring-boot
+  name: tekton-commit
 spec:
   replicas: 1
   selector:
@@ -23,7 +23,7 @@ spec:
       containers:
       - name: tekton-spring-boot
         imagePullPolicy: Always
-        image: quay.io/sachinayyar/tekton-argo:latest
+        image: quay.io/sachinayyar/tekton-serverless:0a54002058cd22b7ab62f4efc63fa09b4235d161
         livenessProbe:
           failureThreshold: 1
           httpGet:
