@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/name: tekton-spring-boot
     app.kubernetes.io/part-of: tekton-spring-boot
     app.openshift.io/runtime: java
-  name: tekton-commit
+  name: tekton-argocd
 spec:
   replicas: 1
   selector:
@@ -23,7 +23,7 @@ spec:
       containers:
       - name: tekton-spring-boot
         imagePullPolicy: Always
-        image: quay.io/sachinayyar/tekton-serverless:0a54002058cd22b7ab62f4efc63fa09b4235d161
+        image: quay.io/sachinayyar/tekton-argocd:latest
         livenessProbe:
           failureThreshold: 1
           httpGet:
