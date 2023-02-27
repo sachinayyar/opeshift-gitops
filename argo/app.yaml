@@ -1,30 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: quay.io/sachinayyar/tekton-argocd
-    argocd-image-updater.argoproj.io/dex.image-name: tekton-argocd
-    argocd-image-updater.argoproj.io/dex.image-tag: ^1
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-  name: tekton-spring-boot
+  name: argo-dev
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: tekton-argocd
-    server: https://kubernetes.default.svc
+    namespace: dev
+    server: 'https://api.cluster-t9vdh.t9vdh.sandbox2832.opentlc.com:6443'
   project: default
   source:
-    helm:
-      releaseName: tekton-argocd
-      valueFiles:
-        - values.yaml
-    path: app
-    repoURL: https://github.com/sachinayyar/opeshift-gitops.git
+    path: k8s
+    repoURL: 'https://github.com/sachinayyar/tekton-spring-boot-config.git'
     targetRevision: main
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-
-
+  syncOptions:
+    - CreateNamespace=true
